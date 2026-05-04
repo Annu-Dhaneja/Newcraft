@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-neon-purple: #7f00ff;
+  --color-teal: #00f2ff;
+  --color-gold: #ffd700;
+  --color-dark: var(--theme-dark);
+  --color-darker: var(--theme-darker);
+}
+
+:root {
+  --theme-dark: #f8fafc;
+  --theme-darker: #ffffff;
+  --theme-foreground: #0f172a;
+  --theme-muted: #64748b;
+  --theme-border: rgba(0,0,0,0.1);
+}
+
+.dark {
+  --theme-dark: #050505;
+  --theme-darker: #000000;
+  --theme-foreground: #f8fafc;
+  --theme-muted: #94a3b8;
+  --theme-border: rgba(255,255,255,0.05);
+}
+
+@layer base {
+  body {
+    @apply bg-darker text-foreground font-sans antialiased selection:bg-neon-purple/30 selection:text-teal transition-colors duration-500;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-foreground;
+  }
+}
+
+@theme {
+  --color-foreground: var(--theme-foreground);
+  --color-muted: var(--theme-muted);
+  --color-border: var(--theme-border);
+}
+
+.neon-glow {
+  box-shadow: 0 0 40px rgba(127, 0, 255, 0.4);
+}
+
+.teal-glow {
+  box-shadow: 0 0 40px rgba(0, 242, 255, 0.4);
+}
+
+.gold-glow {
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+}
+
+.shadow-gold-glow {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.glass {
+  @apply bg-dark border border-border;
+}
+
+.cyber-grid {
+    background-image: 
+        linear-gradient(to right, rgba(127, 0, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(127, 0, 255, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
